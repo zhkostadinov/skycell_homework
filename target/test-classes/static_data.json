@@ -1,0 +1,22 @@
+{
+  "dev_skycell": {
+    "url": "https://keycloak.dev.skycell.ch/",
+    "token": "https://keycloak.dev.skycell.ch/realms/skycell/protocol/openid-connect/token",
+    "static_username": "",
+    "static_password": "",
+    "api_key": ""
+  },
+  "dev_sensor": {
+    "url": "https://sensor-data-ingestion.dev.skycell.ch/",
+    "logger_config": "https://sensor-data-ingestion.dev.skycell.ch/v1/lora/configuration",
+    "static_username": "",
+    "static_password": "",
+    "api_key": ""
+  },
+  "loggers": {
+    "type_810T": "MR_810T",
+    "type_810T_logger_nex_number": "",
+    "type_812P": "MR_812P",
+    "type_812P_logger_nex_number": ""
+  }
+}

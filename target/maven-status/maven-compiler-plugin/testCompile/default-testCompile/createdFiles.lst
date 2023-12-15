@@ -1,0 +1,5 @@
+microservices/cucumber/api/Loggers.class
+microservices/CucumberRunnerTest.class
+microservices/utils/LoadStaticData.class
+microservices/cucumber/api/RegisterMember.class
+microservices/utils/RandomData.class
