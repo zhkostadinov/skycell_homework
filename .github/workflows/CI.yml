@@ -1,11 +1,13 @@
 name: CI
 
 on:
-  # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  # GitHub Action runner is based on UTC. CET is +1 hour 
+  schedule:
+      - cron: '59 23 * * *'  
 
 jobs:
   run_tests:
@@ -35,3 +37,16 @@ jobs:
             logger_nex_mr810t: ${{ secrets.LOGGER_NEX_MR810T }}
             logger_nex_mr812p: ${{ secrets.LOGGER_NEX_MR812P }}
         run: mvn test
+      - name: Send mail
+        uses: dawidd6/action-send-mail@v2
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          from: ${{ github.job }}
+          subject: Github action from repository ${{ github.repository }} has status ${{ job.status }}
+          body: Execution report of ${{ github.job }} job Download and open the attachments for more verbose output.
+          to: kostadinov.zh@gmail.com
+          ignore_cert: true
+          attachments: cucumber-reports/execution-report.html
