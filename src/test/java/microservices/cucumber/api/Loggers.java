@@ -1,23 +1,20 @@
 package microservices.cucumber.api;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import kong.unirest.Unirest;
 import kong.unirest.HttpResponse;
-import kong.unirest.json.JSONObject;
 import microservices.utils.LoadStaticData;
 import microservices.utils.RandomData;
 
 import java.util.Map;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class Loggers {
     private HttpResponse<String> HttpResponse;
-    private final Map<String, JsonObject> staticData = LoadStaticData.load();
+    private final Map<String, JsonObject> staticData = LoadStaticData.getLoadedData();
     private final String loggerConfigUrl = staticData.get("static_data").getAsJsonObject("dev_sensor")
             .getAsJsonPrimitive("logger_config").getAsString();
     private final String apiKey = staticData.get("static_data").getAsJsonObject("dev_sensor")

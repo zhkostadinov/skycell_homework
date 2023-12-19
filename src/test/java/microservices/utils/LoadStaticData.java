@@ -51,14 +51,17 @@ public class LoadStaticData {
                 .addProperty("type_812P_logger_nex_number", System.getenv("logger_nex_mr812p"));
     }
 
-    public static Map<String, JsonObject> load() {
+    public static void load() {
         loadEnvVars();
         staticData.put("static_data", dataAsJson);
         staticData.put("headers", headersAsJson);
         staticData.put("loggerMrBody", loggerBodyAsJson);
+    }
 
+    public static Map<String, JsonObject> getLoadedData() {
         return staticData;
     }
+
 
     public static Map<String, JsonObject> update(String key, JsonObject data) {
         staticData.put(key, data);

@@ -1,6 +1,5 @@
 package microservices.cucumber.api;
 
-import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -16,7 +15,7 @@ import static org.junit.Assert.assertTrue;
 
 public class RegisterMember {
     private HttpResponse<String>  HttpResponse;
-    private Map<String, JsonObject> staticData = LoadStaticData.load();
+    private Map<String, JsonObject> staticData = LoadStaticData.getLoadedData();
     private String tokenUrl = staticData.get("static_data").getAsJsonObject("dev_skycell")
             .getAsJsonPrimitive("token").getAsString();
     private String username = staticData.get("static_data").getAsJsonObject("dev_skycell")
