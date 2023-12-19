@@ -12,6 +12,6 @@ Feature: Authentication
     When I register member with "static_username" and "wrong_password"
     Then I should see token is generated with status "invalid_grant"
 
-  Scenario: User is not able to authenticate without username and password
+  Scenario: User is not able to authenticate without existing username and password
     When I register member with "wrong_username" and "wrong_password"
     Then I should see token is generated with status "invalid_grant"
