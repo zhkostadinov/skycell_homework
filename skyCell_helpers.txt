@@ -1,0 +1,10 @@
+Explanation:
+
+This scenario is critical for testing as it covers the end-to-end process of dynamic location selection for battery replacements and the associated LED indication.
+It ensures that the cloud platform, IoT service, gateways, and loggers work seamlessly to handle dynamic configurations and provide timely alerts and visual indicators.
+It addresses the specific requirements outlined by the customer regarding battery management, optimizing battery life by limiting LED blinking to selected replacement locations.
+
+
+I can see unavailable loggers could not sending measured data
+- what about if they save the data(in message broker, in a queue), and once available, they can load and push that data?
+

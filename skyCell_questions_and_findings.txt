@@ -1,0 +1,22 @@
+Task 3 manual testing.
+- I can override loggers and numbers. If I set one logger with a specific NEX, then with the same NEX I can add another logger from different type.
+- If I pass a not supported logger in the request body, I can see sensitive information in the response.
+
+[
+    {
+        "message": "Impossible to deserialize message",
+        "messageDetails": "Cannot deserialize value of type `ch.skycell.repository.entities.enums.DeviceType` from String \"MR_812P_1\": not one of the values accepted for Enum class: [MR_813, MR_812P, MR_815, CL_TT_7100, MR_810T, SKYCELL_SAVY_BLE, CARTASENSE_M, CARTASENSE, MR_814, SKYCELL, LIBERO_GL, CL_BUTTERFLY]\n at [Source: (io.quarkus.vertx.http.runtime.VertxInputStream); line: 3, column: 16] (through reference chain: ch.skycell.lora.configuration.dto.LoraConfigurationDto[\"loggerType\"])"
+    }
+]
+
+- I can create logger with negative number in basinterval.
+- When basinterval is very long number, also breaks and shows sensitive data.
+
+[
+    {
+        "message": "Impossible to deserialize message",
+        "messageDetails": "Numeric value (600000000000000) out of range of int (-2147483648 - 2147483647)\n at [Source: (io.quarkus.vertx.http.runtime.VertxInputStream); line: 4, column: 33] (through reference chain: ch.skycell.lora.configuration.dto.LoraConfigurationDto[\"baseInterval\"])"
+    }
+]
+
+

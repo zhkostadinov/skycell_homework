@@ -1,0 +1,10 @@
+export dev_sensor_api_key='NNSXS.RPNRQUVEAQHYIBRJPYB5BMF36VT2E4ZIQWLCO6Y.ZP7FKSYX6J2XO2SRNBPHWQJHIBB5ZWTULHPI27N7C4IMQAKB6QYA'
+export dev_sensor_static_password='Qa_interview2023!'
+export dev_sensor_static_username='qa_interview@skycell.ch'
+
+export dev_skycell_api_key='NNSXS.RPNRQUVEAQHYIBRJPYB5BMF36VT2E4ZIQWLCO6Y.ZP7FKSYX6J2XO2SRNBPHWQJHIBB5ZWTULHPI27N7C4IMQAKB6QYA'
+export dev_skycell_static_password='Qa_interview2023!'
+export dev_skycell_static_username='qa_interview@skycell.ch'
+
+export logger_nex_mr810t='ccdd128d7f1d5435'
+export logger_nex_mr812p='2fe921473d2e9283'
